@@ -6,7 +6,7 @@ import json
 import flask
 import unidecode
 
-from flask_restplus import Resource
+from flask_restx import Resource
 
 from ..run import api
 
