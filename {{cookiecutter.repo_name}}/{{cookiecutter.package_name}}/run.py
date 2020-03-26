@@ -1,4 +1,5 @@
-#!flask/bin/python
+# Copyright 2019-2020 {{ cookiecutter.author }}
+# See LICENSE for details.
 
 from flask import Flask, Blueprint
 
@@ -7,18 +8,15 @@ import pkg_resources
 import re
 
 from . import config
-
-{%- if cookiecutter.flask_limiter|lower == 'yes' %}
+{% if cookiecutter.flask_limiter|lower == 'yes' %}
 from .core import limiter
-{%- endif %}
-
-{%- if cookiecutter.flask_cache|lower == 'yes' %}
+{% endif %}
+{% if cookiecutter.flask_cache|lower == 'yes' %}
 from .core import cache
-{%- endif %}
-
-{%- if cookiecutter.flask_cors|lower == 'yes' %}
+{% endif %}
+{% if cookiecutter.flask_cors|lower == 'yes' %}
 from flask_cors import CORS
-{%- endif %}
+{% endif %}
 
 from .api.v1 import api
 
@@ -86,28 +84,29 @@ def initialize_app(flask_app):
 
     v1 = Blueprint('api', '{{ cookiecutter.package_name }}', url_prefix='/v1')
     api.init_app(v1)
-
-    {%- if cookiecutter.flask_limiter|lower == 'yes' %}
+    {% if cookiecutter.flask_limiter|lower == 'yes' %}
     limiter.init_app(flask_app)
-    {%- endif %}
-    {%- if cookiecutter.flask_cache|lower == 'yes' %}
+    {% endif %}
+    {% if cookiecutter.flask_cache|lower == 'yes' %}
     cache.init_app(flask_app)
-    {%- endif %}
+    {% endif %}
     
     # api.add_namespace(equities_ns)
     flask_app.register_blueprint(v1)
 
 
 initialize_app(app)
-{%- if cookiecutter.flask_cors|lower == 'yes' %}
+{% if cookiecutter.flask_cors|lower == 'yes' %}
 CORS(app)
-{%- endif %}
+{% endif %}
 
 
 def launch_api(enable_ssl):
     """
     This function launches the API in the public IP (0.0.0.0) in the port 5000.
     """
+
+    print({{ cookiecutter.package_name}}.__author__)
 
     print("=========================================")
     print(f"Author: {__name__.__author__}")

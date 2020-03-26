@@ -1,4 +1,5 @@
-#!flask/bin/python
+# Copyright 2019-2020 {{ cookiecutter.author }}
+# See LICENSE for details.
 
 def handle400error(namespace, error_desc):
     """
