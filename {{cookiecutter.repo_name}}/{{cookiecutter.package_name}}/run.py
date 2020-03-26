@@ -3,9 +3,10 @@
 
 from flask import Flask, Blueprint
 
+import re
 import pkg_resources
 
-import re
+from .__init__ import __author__, __version__ 
 
 from . import config
 {% if cookiecutter.flask_limiter|lower == 'yes' %}
@@ -20,12 +21,7 @@ from flask_cors import CORS
 
 from .api.v1 import api
 
-from .api.equities import equities_ns
-from .api.etfs import etfs_ns
-from .api.funds import funds_ns
-from .api.indexed_funds import indexed_funds_ns
-from .api.currencies import currencies_ns
-from .api.portfolio import portfolio_ns
+from .api.sample import sample_ns
 
 app = Flask('{{ cookiecutter.package_name }}')
 
@@ -90,8 +86,7 @@ def initialize_app(flask_app):
     {% if cookiecutter.flask_cache|lower == 'yes' %}
     cache.init_app(flask_app)
     {% endif %}
-    
-    # api.add_namespace(equities_ns)
+    api.add_namespace(sample_ns)
     flask_app.register_blueprint(v1)
 
 
@@ -106,11 +101,9 @@ def launch_api(enable_ssl):
     This function launches the API in the public IP (0.0.0.0) in the port 5000.
     """
 
-    print({{ cookiecutter.package_name}}.__author__)
-
     print("=========================================")
-    print(f"Author: {__name__.__author__}")
-    print(f"Version: {__name__.__version__}")
+    print(f"Author: {__author__}")
+    print(f"Version: {__version__}")
     if enable_ssl is True:
         print('SSL is enabled!')
     else:
