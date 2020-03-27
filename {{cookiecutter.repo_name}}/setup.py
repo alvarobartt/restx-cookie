@@ -25,7 +25,7 @@ def parse_requirements():
 
 
 setup(
-    name='{{ cookiecutter.author }}',
+    name='{{ cookiecutter.package_name }}',
     version='{{ cookiecutter.version }}',
     packages=find_packages(),
     url="https://www.github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",

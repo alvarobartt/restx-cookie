@@ -12,13 +12,12 @@ from ..run import api
 
 from .sample_serializers import sample_data
 from .sample_parsers import sample_arguments
-
 {% if cookiecutter.flask_limiter|lower == 'yes' %}
 from ..core import limiter
-{% endif %}
-{% if cookiecutter.flask_cache|lower == 'yes' %}
+{%- endif %}
+{%- if cookiecutter.flask_cache|lower == 'yes' %}
 from ..core import cache
-{% endif %}
+{%- endif %}
 
 from ..utils import handle400error, handle404error, handle500error
 

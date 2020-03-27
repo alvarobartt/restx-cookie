@@ -11,13 +11,13 @@ from .__init__ import __author__, __version__
 from . import config
 {% if cookiecutter.flask_limiter|lower == 'yes' %}
 from .core import limiter
-{% endif %}
-{% if cookiecutter.flask_cache|lower == 'yes' %}
+{%- endif %}
+{%- if cookiecutter.flask_cache|lower == 'yes' %}
 from .core import cache
-{% endif %}
+{%- endif %}
 {% if cookiecutter.flask_cors|lower == 'yes' %}
 from flask_cors import CORS
-{% endif %}
+{%- endif %}
 
 from .api.v1 import api
 
@@ -82,18 +82,19 @@ def initialize_app(flask_app):
     api.init_app(v1)
     {% if cookiecutter.flask_limiter|lower == 'yes' %}
     limiter.init_app(flask_app)
-    {% endif %}
-    {% if cookiecutter.flask_cache|lower == 'yes' %}
+    {%- endif %}
+    {%- if cookiecutter.flask_cache|lower == 'yes' %}
     cache.init_app(flask_app)
-    {% endif %}
+    {%- endif %}
+    
     api.add_namespace(sample_ns)
     flask_app.register_blueprint(v1)
 
 
 initialize_app(app)
-{% if cookiecutter.flask_cors|lower == 'yes' %}
+{%- if cookiecutter.flask_cors|lower == 'yes' %}
 CORS(app)
-{% endif %}
+{%- endif %}
 
 
 def launch_api(enable_ssl):
