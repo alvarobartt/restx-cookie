@@ -1,12 +1,8 @@
-<div align="center">
+<h1 align="center">Flask-RESTX as Python Package Cookie</div>
 
-# Flask-RESTX as Python Package Cookie
-
-## insert cookie monster image
-
-### This is a [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) so as to generate a [Flask RESTX](https://github.com/python-restx/flask-restx) API as a Python Package quickly and clearly.
-
-</div>
+<p align="center">
+  <img src="https://i.pinimg.com/originals/ac/a4/95/aca4951fa1d8d6da682821bc467ea6ce.png" height="400px">
+</p>
 
 ## Features
 
