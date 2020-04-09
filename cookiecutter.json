@@ -7,7 +7,7 @@
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "pypi_username": "{{ cookiecutter.github_username }}",
-    "version": "0.1",
+    "version": "1",
     "flask_limiter": "yes",
     "flask_cache": "yes",
     "flask_cors": "yes",

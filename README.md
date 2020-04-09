@@ -1,4 +1,4 @@
-<h1 align="center">Flask-RESTX as Python Package Cookie</div>
+<h1 align="center">Flask-RESTX API as a Python Package Cookie</div>
 </br>
 <div align="center">
   <img src="https://i.pinimg.com/originals/ac/a4/95/aca4951fa1d8d6da682821bc467ea6ce.png" alt="cookie-monster" height="300px" hspace="20">
@@ -41,7 +41,7 @@ project_description [This project is a sample Python Flask Restx API]: This is a
 repo_name [awesome_cookie]: awesome_cookie
 package_name [awesome_cookie]: awesome_cookie
 pypi_username [cookie-monster]: cookie-monster
-version [0.1]: 1
+version [1]: 1
 flask_limiter [yes]: yes
 flask_cache [yes]: yes
 flask_cors [yes]: yes
@@ -61,7 +61,7 @@ Once the newly created cookie is installed, just paste its **entry point** on th
 
 `awesome_cookie`
 
-which **will launch the Flask RESTX API in your public API (0.0.0.0) in the port 5000 using the current version** (which by deafult is the v1 version), so the complete address of the API is: `http://0.0.0.0:5000/v1`. In that address you will find the Swagger.io documentation automatically generated so as to know which endpoints are available, which data models are integrated, which is the input/output structure, etc.
+**The entry-point will launch the Flask RESTX API in your public IP (0.0.0.0) in the port 5000 using the current version** (which by deafult is the v1 version), so the complete address of the API is: `http://0.0.0.0:5000/v1`. In that address you will find the Swagger.io documentation automatically generated so as to know which endpoints are available, which data models are integrated, which is the input/output structure, etc.
 
 **Now you are completely free to eat your cookie!**
 
