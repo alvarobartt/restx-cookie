@@ -10,5 +10,10 @@
     "version": "0.1",
     "flask_limiter": "yes",
     "flask_cache": "yes",
-    "flask_cors": "yes"
+    "flask_cors": "yes",
+    "license": [
+        "MIT License", "BSD License", "ISC License",
+        "Apache Software License 2.0", "GNU General Public License v3",
+        "WTFPL License", "None"
+    ]
 }
