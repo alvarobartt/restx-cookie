@@ -1,4 +1,4 @@
-# Copyright 2019-2020 {{ cookiecutter.author }}
+# Copyright {% now 'local', '%Y' %} {{ cookiecutter.author }}
 # See LICENSE for details.
 
 import io
@@ -6,22 +6,16 @@ import io
 from setuptools import setup, find_packages
 
 
-def parse_readme():
+def readme():
     with io.open('README.md', encoding='utf-8') as f:
-        readme = f.read()
-    f.close()
+        return f.read()
 
-    return readme
-
-def parse_requirements():
-    requirements = list()
-
-    with io.open('requirements.txt', encoding='utf-8') as f:
+def requirements(filename):
+    reqs = list()
+    with io.open(filename, encoding='utf-8') as f:
         for line in f.readlines():
-            requirements.append(line.strip())
-    f.close()
-
-    return requirements
+            reqs.append(line.strip())
+    return reqs
 
 
 setup(
@@ -30,13 +24,13 @@ setup(
     packages=find_packages(),
     url="https://www.github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
     download_url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/archive/{{ cookiecutter.version }}.tar.gz',
-    license='GNU Affero General Public License v3',
+    license='{{ cookiecutter.license }}',
     author='{{ cookiecutter.author }}',
     author_email='{{ cookiecutter.email }}',
-    description='{{ cookiecutter.package_name }} - {{ cookiecutter.project_description }}',
-    long_description=parse_readme(),
+    description='{{ cookiecutter.project_description }}',
+    long_description=readme(),
     long_description_content_type='text/markdown',
-    install_requires=parse_requirements(),
+    install_requires=requirements(filename='requirements.txt'),
     data_files=[],
     entry_points={
         'console_scripts': [
@@ -52,6 +46,9 @@ setup(
         "License :: OSI Approved :: GNU Affero General Public License v3",
         "Intended Audience :: Developers"
     ],
+    extras_require={
+        "tests": requirements(filename='tests/requirements.txt'),
+    },
     python_requires='>=3.6',
     project_urls={
         'Bug Reports': 'https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/issues',

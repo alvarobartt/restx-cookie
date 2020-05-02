@@ -1,4 +1,4 @@
-# Copyright 2019-2020 {{ cookiecutter.author }}
+# Copyright {% now 'local', '%Y' %} {{ cookiecutter.author }}
 # See LICENSE for details.
 
 RESTPLUS_MASK_SWAGGER = False

@@ -45,6 +45,15 @@ version [1]: 1
 flask_limiter [yes]: yes
 flask_cache [yes]: yes
 flask_cors [yes]: yes
+Select license:
+1 - MIT License
+2 - BSD License
+3 - ISC License
+4 - Apache Software License 2.0
+5 - GNU General Public License v3
+6 - WTFPL License
+7 - None
+Choose from 1, 2, 3, 4, 5, 6, 7 [1]: 1
 ```
 
 When this process is finished, automatically a directory named as specified in `repo_name` will be created containing the following files and directories:
@@ -94,3 +103,7 @@ Maybe after seeing this cookie recipe your inner chef spirit came out and you de
 - [cookiecutter](https://github.com/cookiecutter/cookiecutter)
 - [Getting to know Cookiecutter!](https://cookiecutter.readthedocs.io/en/1.7.0/tutorial1.html)
 - [Additional Tutorials](https://cookiecutter.readthedocs.io/en/latest/tutorials.html)
+
+---
+
+<p align="center"><img src="https://i.ibb.co/zhFrbZm/made-with-love.png" width="550" hspace="50"/></p>
