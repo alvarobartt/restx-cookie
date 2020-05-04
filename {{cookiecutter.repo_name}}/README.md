@@ -40,7 +40,7 @@ So on, the previous command is the API entry point whose default output will loo
 
 ```
 =========================================
-Author: {{ cookiecutter.author }} | {{ cookiecutter.github_username } @ GitHub
+Author: {{ cookiecutter.author }} | {{ cookiecutter.github_username }} @ GitHub
 Version: 1
 SSL is disabled!
 =========================================
