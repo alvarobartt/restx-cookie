@@ -1,11 +1,6 @@
 # Copyright {% now 'local', '%Y' %} {{ cookiecutter.author }}
 # See LICENSE for details.
 
-import json
-
-import flask
-import unidecode
-
 from flask_restx import Resource
 
 from ..run import api
@@ -29,9 +24,31 @@ class SampleData(Resource):
     @api.response(400, 'Invalid parameters')
     @api.response(404, 'Data not found')
     @api.response(500, 'Unhandled errors')
+    {%- if cookiecutter.flask_limiter|lower == 'yes' %}
+    @limiter.limit('100/hour')
+    {%- endif %}
+    {%- if cookiecutter.flask_cache|lower == 'yes' %}
+    @cache.cached(timeout=120, query_string=True)
+    {%- endif %}
     def get(self):
+        """
+        This is a sample HTTP GET method
+        """
+        
         return {'data': 'get'}
 
-    def post(sefl):
-        return {'data': 'post'}
+    @api.response(400, 'Invalid parameters')
+    @api.response(404, 'Data not found')
+    @api.response(500, 'Unhandled errors')
+    {%- if cookiecutter.flask_limiter|lower == 'yes' %}
+    @limiter.limit('100/hour')
+    {%- endif %}
+    {%- if cookiecutter.flask_cache|lower == 'yes' %}
+    @cache.cached(timeout=120, query_string=True)
+    {%- endif %}
+    def post(self):
+        """
+        This is a sample HTTP POST method
+        """
 
+        return {'data': 'post'}

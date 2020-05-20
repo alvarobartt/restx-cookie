@@ -1,10 +1,14 @@
-Flask_Caching>=1.7.2
-Flask_Limiter>=1.0.1
 Flask>=1.1.1
-Unidecode>=1.1.1
-pytest>=5.2.0
 flask_restx>=0.2.0
-Flask_Cors>=3.0.8
 setuptools>=41.1.0
 pyopenssl>=19.1.0
 argparse>=1.4.0
+{%- if cookiecutter.flask_cache|lower == 'yes' %}
+Flask_Caching>=1.7.2
+{%- endif %}
+{%- if cookiecutter.flask_limiter|lower == 'yes' %}
+Flask_Limiter>=1.0.1
+{%- endif %}
+{%- if cookiecutter.flask_cors|lower == 'yes' %}
+Flask_Cors>=3.0.8
+{%- endif %}

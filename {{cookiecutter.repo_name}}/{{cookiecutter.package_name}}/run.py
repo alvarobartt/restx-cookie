@@ -3,6 +3,8 @@
 
 from flask import Flask, Blueprint
 
+import argparse
+
 import re
 import pkg_resources
 
@@ -123,8 +125,6 @@ def main():
     """
     This is the main function that is launched whenever the package is called.
     """
-
-    import argparse
 
     parser = argparse.ArgumentParser(prog='{{ cookiecutter.package_name }}')
     parser.add_argument('-s', '--enable_ssl', action='store_true', default=False, help="Use this argument to either use SSL or not.")
