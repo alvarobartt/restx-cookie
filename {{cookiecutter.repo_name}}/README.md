@@ -73,7 +73,3 @@ When citing this repository on your publications please use the following **BibT
 ```
 
 ### This repository has been generated using [restx-cookie](https://github.com/alvarobartt/restx-cookie)
-
----
-
-<p align="center"><img src="https://i.ibb.co/zhFrbZm/made-with-love.png" width="550" hspace="50"/></p>
