@@ -43,7 +43,22 @@ setup(
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
-        "License :: OSI Approved :: GNU Affero General Public License v3",
+        "Programming Language :: Python :: 3.8",
+        {%- if cookiecutter.license == "MIT License" %}
+        "License :: OSI Approved :: MIT License",
+        {%- endif %}
+        {%- if cookiecutter.license == "BSD License" %}
+        "License :: OSI Approved :: BSD License",
+        {%- endif %}
+        {%- if cookiecutter.license == "ISC License" %}
+        "License :: OSI Approved :: ISC License",
+        {%- endif %}
+        {%- if cookiecutter.license == "Apache Software License 2.0" %}
+        "License :: OSI Approved :: Apache Software License",
+        {%- endif %}
+        {%- if cookiecutter.license == "GNU General Public License v3" %}
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        {%- endif %}
         "Intended Audience :: Developers"
     ],
     extras_require={

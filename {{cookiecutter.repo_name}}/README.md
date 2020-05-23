@@ -6,15 +6,9 @@
 
 ## Installation
 
-In order to get this package working you will need to **install it via pip** (with a Python3.5 version or higher) on the terminal by typing:
+In order to get this package working you will need to **install it via pip** (with a Python 3.6 version or higher) on the terminal by typing:
 
 ``$ pip install {{ cookiecutter.package_name }}``
-
-Additionally, **if you want to use the latest version instead of the stable one**, you can just use the following command:
-
-``$ pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.git@developer``
-
-**The developer branch ensures the user that the most updated version will always be the working and fully operative** so as not to wait until the stable release on the master branch comes out (which eventually may take some time depending on the amount of issues to solve).
 
 If the package is not uploaded to neither PyPI nor Anaconda Cloud, you can easily install it from source as it follows:
 

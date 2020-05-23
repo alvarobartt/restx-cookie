@@ -4,7 +4,7 @@
     "github_username": "alvarobartt",
     "project_name": "Flask Restx API",
     "project_description": "This project is a sample Python Flask Restx API",
-    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "pypi_username": "{{ cookiecutter.github_username }}",
     "version": "1",

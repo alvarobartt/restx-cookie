@@ -103,7 +103,3 @@ Maybe after seeing this cookie recipe your inner chef spirit came out and you de
 - [cookiecutter](https://github.com/cookiecutter/cookiecutter)
 - [Getting to know Cookiecutter!](https://cookiecutter.readthedocs.io/en/1.7.0/tutorial1.html)
 - [Additional Tutorials](https://cookiecutter.readthedocs.io/en/latest/tutorials.html)
-
----
-
-<p align="center"><img src="https://i.ibb.co/zhFrbZm/made-with-love.png" width="550" hspace="50"/></p>
