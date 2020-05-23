@@ -44,7 +44,7 @@ class SampleData(Resource):
     @limiter.limit('100/hour')
     {%- endif %}
     {%- if cookiecutter.flask_cache|lower == 'yes' %}
-    @cache.cached(timeout=120, query_string=True)
+    @cache.memoize(timeout=120)
     {%- endif %}
     def post(self):
         """
