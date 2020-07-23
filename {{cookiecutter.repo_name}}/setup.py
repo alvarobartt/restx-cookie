@@ -34,7 +34,7 @@ setup(
     data_files=[],
     entry_points={
         'console_scripts': [
-            '{{ cookiecutter.package_name }}={{ cookiecutter.package_name }}.run:main'
+            '{{ cookiecutter.package_name }}={{ cookiecutter.package_name }}.server:run'
         ],
     },
     include_package_data=True,

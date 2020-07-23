@@ -2,7 +2,7 @@ Flask>=1.1.1
 flask_restx>=0.2.0
 setuptools>=41.1.0
 pyopenssl>=19.1.0
-argparse>=1.4.0
+click>=7.1.2
 {%- if cookiecutter.flask_cache|lower == 'yes' %}
 Flask_Caching>=1.7.2
 {%- endif %}

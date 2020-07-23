@@ -3,7 +3,7 @@
 
 import pytest
 
-from {{ cookiecutter.package_name }}.run import app
+from {{ cookiecutter.package_name }}.server import app
 
 
 @pytest.fixture

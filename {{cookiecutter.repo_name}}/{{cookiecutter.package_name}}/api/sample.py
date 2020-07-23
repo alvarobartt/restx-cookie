@@ -3,10 +3,10 @@
 
 from flask_restx import Resource
 
-from ..run import api
+from .parsers import sample_parser
 
-from .sample_serializers import sample_data
-from .sample_parsers import sample_arguments
+from ..server import api
+
 {% if cookiecutter.flask_limiter|lower == 'yes' %}
 from ..core import limiter
 {%- endif %}
@@ -14,13 +14,15 @@ from ..core import limiter
 from ..core import cache
 {%- endif %}
 
-from ..utils import handle400error, handle404error, handle500error
+from ..error_handlers import handle400error, handle404error, handle500error
 
-sample_ns = api.namespace('sample', description='{{ cookiecutter.package_name }} - sample namespace')
+sample_ns = api.namespace('sample', description='{{ cookiecutter.package_name }} - This is a sample namespace')
 
 
 @sample_ns.route('/data')
 class SampleData(Resource):
+
+    @api.expect(sample_parser)
     @api.response(400, 'Invalid parameters')
     @api.response(404, 'Data not found')
     @api.response(500, 'Unhandled errors')
@@ -34,9 +36,12 @@ class SampleData(Resource):
         """
         This is a sample HTTP GET method
         """
-        
-        return {'data': 'get'}
 
+        args = sample_parser.parse_args()
+        
+        return args
+
+    @api.expect(sample_parser)
     @api.response(400, 'Invalid parameters')
     @api.response(404, 'Data not found')
     @api.response(500, 'Unhandled errors')
@@ -51,4 +56,6 @@ class SampleData(Resource):
         This is a sample HTTP POST method
         """
 
-        return {'data': 'post'}
+        args = sample_parser.parse_args()
+        
+        return args
